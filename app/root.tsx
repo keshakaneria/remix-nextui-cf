@@ -10,13 +10,19 @@ import {
 import { NextUIProvider, Container, Text, css } from '@nextui-org/react'
 import type { MetaFunction } from "remix";
 
+import type { LinksFunction } from "@remix-run/node";
+import styles from "../styles/global.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+];
 
 export const meta: MetaFunction = () => {
-  return { title: "Remix-Nextui" };
+  return { title: "PureML" };
 };
 function Document({
   children,
-  title = "App title"
+  title = "App | PureML"
 }: {
   children: React.ReactNode;
   title?: string;
